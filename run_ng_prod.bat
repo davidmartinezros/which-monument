@@ -1,0 +1,1 @@
+ng build --base-href https://davidmartinezros.com/Angular5/which-monument/ --prod --env=prod
