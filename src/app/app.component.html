@@ -1,3 +1,11 @@
 <h1>
   {{title}}
 </h1>
+
+<form class="form-signin" (ngSubmit)="onSubmit()">
+  <h2 class="form-signin-heading">Escoje una imagen</h2>
+  <input type="file" id="file" (change)="onFileChange($event)">
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+</form>
+
+<h3>{{response}}</h3>
