@@ -1,11 +1,21 @@
 <h1>
-  {{title}}
+  <b>{{title}}</b>
 </h1>
 
+<h3><b>Which Monument</b> is a service done by <a href="https://davidmartinezros.com" target="_blank">davidmartinezros.com</a> that predicts the content of an image with an Artificial Intelligence algoritm (<a href="https://tensorflow.org" target="_blank">TensorFlow</a>).</h3>
+
 <form class="form-signin" (ngSubmit)="onSubmit()">
-  <h2 class="form-signin-heading">Escoje una imagen</h2>
+  <h2 class="form-signin-heading">Choose an image</h2>
   <input type="file" id="file" (change)="onFileChange($event)">
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
 </form>
 
-<h3>{{response}}</h3>
+<div *ngIf="response">
+  <h3>The TensorFlow algoritm predicts the image is:</h3>
+  <table border=1>
+    <tr *ngFor="let intent of response">
+      <td>{{intent.label}}</td>
+      <td>{{intent.probability}}%</td>
+    </tr>
+  </table>
+</div>

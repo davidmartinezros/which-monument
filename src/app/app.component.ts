@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AppComponent {
 
-  title = 'app works!';
+  title = 'Which Monument';
 
   file;
   
@@ -27,7 +27,7 @@ export class AppComponent {
   }
 
   onSubmit() {
-      this.whichImageIsService.askForImage(this.file)
+      this.whichImageIsService.askForImageAllLabels(this.file)
         .subscribe(res => this.response = res);
   }
 
